@@ -16,19 +16,23 @@ export default function Output({ data }) {
     const xmlDoc = parser.parseFromString(data.content, 'text/xml');
     let csv = '';
     if (xmlDoc.getElementsByTagName('cbc:RegistrationName').length > 0) {
-      const xmlCon = parser.parseFromString(xmlDoc.getElementsByTagName('cbc:Description')[0].childNodes[0].nodeValue, 'text/xml');
+      const xmlItem = parser.parseFromString(xmlDoc.getElementsByTagName('cbc:Description')[0].childNodes[0].nodeValue, 'text/xml');
+      let item = '';
+      let i = 0;
+      for (i; i < xmlItem.getElementsByTagName('cbc:Description').length; i += 1) {
+        item = `${xmlItem.getElementsByTagName('cbc:Description')[i].childNodes[0].nodeValue} , ${xmlItem.getElementsByTagName('cbc:PriceAmount')[i].childNodes[0].nodeValue}\n`;
+      }
       csv = `Supplier
 ${xmlDoc.getElementsByTagName('cbc:RegistrationName')[0].childNodes[0].nodeValue}
 ${xmlDoc.getElementsByTagName('cbc:CompanyID')[0].childNodes[0].nodeValue}
-${xmlCon.getElementsByTagName('cbc:Line')[0].childNodes[0].nodeValue}
+${xmlItem.getElementsByTagName('cbc:Line')[0].childNodes[0].nodeValue}
 \nCustomer
 ${xmlDoc.getElementsByTagName('cbc:RegistrationName')[1].childNodes[0].nodeValue}
 ${xmlDoc.getElementsByTagName('cbc:CompanyID')[1].childNodes[0].nodeValue}
-${xmlCon.getElementsByTagName('cbc:Line')[2].childNodes[0].nodeValue}
+${xmlItem.getElementsByTagName('cbc:Line')[2].childNodes[0].nodeValue}
 \nTransaction
-${xmlCon.getElementsByTagName('cbc:StartDate')[0].childNodes[0].nodeValue}
-${xmlCon.getElementsByTagName('cbc:Description')[0].childNodes[0].nodeValue}
-${xmlCon.getElementsByTagName('cbc:PriceAmount')[0].childNodes[0].nodeValue}`;
+${xmlItem.getElementsByTagName('cbc:StartDate')[0].childNodes[0].nodeValue}
+${item}`;
     } else {
       csv = 'Oh! Looks like this 👆 is not an e-invoice 😮';
     }
