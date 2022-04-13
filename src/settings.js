@@ -21,21 +21,21 @@ module.exports = {
   maintainers: {
     author: {
       avatar:
-        'https://avatars.githubusercontent.com/u/22860911?v=4',
-      name: 'Pizaranha',
-      tg: 'pizaranha',
-      github: 'pizaranha',
-      website: 'https://github.com/pizaranha',
+        'https://avatars0.githubusercontent.com/u/10353856?s=460&u=88394dfd67727327c1f7670a1764dc38a8a24831&v=4',
+      name: 'Vitaly Rtishchev',
+      tg: 'rtivital',
+      github: 'rtivital',
+      website: 'https://github.com/rtivital',
     },
 
     contributors: [
       {
         avatar:
-          'https://avatars0.githubusercontent.com/u/10353856?s=460&u=88394dfd67727327c1f7670a1764dc38a8a24831&v=4',
-        name: 'Vitaly Rtishchev',
-        tg: 'rtivital',
-        github: 'rtivital',
-        website: 'https://github.com/rtivital',
+          'https://avatars.githubusercontent.com/u/22860911?v=4',
+        name: 'Pizaranha',
+        tg: 'pizaranha',
+        github: 'pizaranha',
+        website: 'https://github.com/pizaranha',
       },
       /* Become contributor and insert you name here */
     ],
