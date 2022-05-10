@@ -20,18 +20,19 @@ export default function Output({ data }) {
       let item = '';
       let i = 0;
       for (i; i < xmlItem.getElementsByTagName('cbc:Description').length; i += 1) {
-        item = `${xmlItem.getElementsByTagName('cbc:Description')[i].childNodes[0].nodeValue} , ${xmlItem.getElementsByTagName('cbc:PriceAmount')[i].childNodes[0].nodeValue}\n`;
+        item = item + `\t \t \t \t \t \t \t \t \t ${xmlItem.getElementsByTagName('cbc:ID')[i*4+18].childNodes[0].nodeValue} \t ${xmlItem.getElementsByTagName('cbc:Description')[i].childNodes[0].nodeValue} \t ${xmlItem.getElementsByTagName('cbc:BaseQuantity')[i].childNodes[0].nodeValue} \t ${xmlItem.getElementsByTagName('cbc:Percent')[i].childNodes[0].nodeValue} \t ${xmlItem.getElementsByTagName('cbc:PriceAmount')[i].childNodes[0].nodeValue} \t ${xmlItem.getElementsByTagName('cbc:TaxableAmount')[i+2].childNodes[0].nodeValue}\n`;
       }
-      csv = `Supplier
-${xmlDoc.getElementsByTagName('cbc:RegistrationName')[0].childNodes[0].nodeValue}
-${xmlDoc.getElementsByTagName('cbc:CompanyID')[0].childNodes[0].nodeValue}
-${xmlItem.getElementsByTagName('cbc:Line')[0].childNodes[0].nodeValue}
-\nCustomer
-${xmlDoc.getElementsByTagName('cbc:RegistrationName')[1].childNodes[0].nodeValue}
-${xmlDoc.getElementsByTagName('cbc:CompanyID')[1].childNodes[0].nodeValue}
-${xmlItem.getElementsByTagName('cbc:Line')[2].childNodes[0].nodeValue}
-\nTransaction
-${xmlItem.getElementsByTagName('cbc:StartDate')[0].childNodes[0].nodeValue}
+      const billDate = xmlDoc.getElementsByTagName('cbc:IssueDate')[0].childNodes[0].nodeValue;
+      const billNit = xmlDoc.getElementsByTagName('cbc:CompanyID')[0].childNodes[0].nodeValue;
+      const billIssuer = xmlDoc.getElementsByTagName('cbc:RegistrationName')[0].childNodes[0].nodeValue;
+      const billId = xmlDoc.getElementsByTagName('cbc:ParentDocumentID')[0].childNodes[0].nodeValue;
+      const billSubtotal = xmlItem.getElementsByTagName('cbc:TaxableAmount')[0].childNodes[0].nodeValue;
+      const billDiscount = 'falta descuento';
+      const billIva = xmlItem.getElementsByTagName('cbc:TaxAmount')[0].childNodes[0].nodeValue;
+      const billRetention = 'falta retención';
+      const billTotal = xmlItem.getElementsByTagName('cbc:TaxInclusiveAmount')[0].childNodes[0].nodeValue;
+      csv = `Bill Date \t Issuer NIT \t Issuer Name \t Bill # \t Subtotal \t Discount \t IVA \t Retention \t Total \t Item \t Description \t Quantity \t Tax Category \t Unit Cost \t Total by item
+${billDate} \t ${billNit} \t ${billIssuer} \t ${billId} \t ${billSubtotal} \t ${billDiscount} \t ${billIva} \t ${billRetention} \t ${billTotal}
 ${item}`;
     } else {
       csv = 'Oh! Looks like this 👆 is not an e-invoice 😮';
