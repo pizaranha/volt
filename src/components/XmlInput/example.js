@@ -74,7 +74,7 @@ i8gFkUeWc9Y4pvfANswiGva+LjurVkEIzp6lq5FaKJlKL7AYq/uoXMdoTc+lxn1uBm8ln2J3Vu7/
 K7EPjIJNMxBrFEn+978I8A9JrtKS9TQrLHCiHCerXhadwi+Py5edurwyOOmnOGn3GwVANI4PRruo
 1AsQ39J3JJO8pJxijIsZd48XYH5hdCBXDPMOVox4urzNC6rHgWgFZByexSQ=
 </ds:X509Certificate>
-<ds:X509SubjectName>C=CO,ST=ANTIOQUIA,L=MEDELLIN,O=JOHN DOE,OU=Emitido por Andes SCD Ac 26 69C 03 Torre B Of 701,T=Emisor Factura Electronica - Persona Natural,SERIALNUMBER=31415926541,CN=JOHN DOE,EMAILADDRESS=ventas@dominio.com,STREET=CL 65 SUR 72-391</ds:X509SubjectName>
+<ds:X509SubjectName>C=CO,ST=ANTIOQUIA,L=MEDELLIN,O=NELSON DE JESUS CARDENAS GONZALEZ,OU=Emitido por Andes SCD Ac 26 69C 03 Torre B Of 701,T=Emisor Factura Electronica - Persona Natural,SERIALNUMBER=717918021,CN=NELSON DE JESUS CARDENAS GONZALEZ,EMAILADDRESS=durablock08@gmail.com,STREET=CL 65 SUR 72-391</ds:X509SubjectName>
 <ds:X509IssuerSerial>
 <ds:X509IssuerName>C=CO,L=Bogota D.C.,O=Andes SCD,OU=Division de certificacion entidad final,CN=CA ANDES SCD S.A. Clase II v2,1.2.840.113549.1.9.1=#1614696e666f40616e6465737363642e636f6d2e636f</ds:X509IssuerName>
 <ds:X509SerialNumber>8133765940878140376</ds:X509SerialNumber>
@@ -95,8 +95,8 @@ K7EPjIJNMxBrFEn+978I8A9JrtKS9TQrLHCiHCerXhadwi+Py5edurwyOOmnOGn3GwVANI4PRruo
   <cbc:ParentDocumentID>NC424</cbc:ParentDocumentID>
   <cac:SenderParty>
     <cac:PartyTaxScheme>
-      <cbc:RegistrationName>JOHN DOE</cbc:RegistrationName>
-      <cbc:CompanyID schemeAgencyID="195" schemeID="1" schemeName="31">3141592654</cbc:CompanyID>
+      <cbc:RegistrationName>NELSON DE JESUS CARDENAS GONZALEZ</cbc:RegistrationName>
+      <cbc:CompanyID schemeAgencyID="195" schemeID="1" schemeName="31">71791802</cbc:CompanyID>
       <cbc:TaxLevelCode listName="No aplica">R-99-PN</cbc:TaxLevelCode>
       <cac:TaxScheme>
         <cbc:ID>01</cbc:ID>
@@ -106,8 +106,8 @@ K7EPjIJNMxBrFEn+978I8A9JrtKS9TQrLHCiHCerXhadwi+Py5edurwyOOmnOGn3GwVANI4PRruo
   </cac:SenderParty>
   <cac:ReceiverParty>
     <cac:PartyTaxScheme>
-      <cbc:RegistrationName>JANE DOE</cbc:RegistrationName>
-      <cbc:CompanyID schemeAgencyID="195" schemeID="" schemeName="13">161803398875</cbc:CompanyID>
+      <cbc:RegistrationName>ALEJANDRO BETANCUR PENAGOS</cbc:RegistrationName>
+      <cbc:CompanyID schemeAgencyID="195" schemeID="" schemeName="13">71274677</cbc:CompanyID>
       <cbc:TaxLevelCode listName="No aplica">R-99-PN</cbc:TaxLevelCode>
       <cac:TaxScheme>
         <cbc:ID>01</cbc:ID>
@@ -150,8 +150,8 @@ K7EPjIJNMxBrFEn+978I8A9JrtKS9TQrLHCiHCerXhadwi+Py5edurwyOOmnOGn3GwVANI4PRruo
           <sts:QRCode>NumFac: NC424
 FecFac: 2022-04-05
 HorFac: 10:02:49-05:00
-NitFac: 3141592654
-DocAdq: 161803398875
+NitFac: 71791802
+DocAdq: 71274677
 ValFac: 1065000.00
 ValIva: 0.00
 ValOtroIm: 0.00
@@ -237,7 +237,7 @@ i8gFkUeWc9Y4pvfANswiGva+LjurVkEIzp6lq5FaKJlKL7AYq/uoXMdoTc+lxn1uBm8ln2J3Vu7/
 K7EPjIJNMxBrFEn+978I8A9JrtKS9TQrLHCiHCerXhadwi+Py5edurwyOOmnOGn3GwVANI4PRruo
 1AsQ39J3JJO8pJxijIsZd48XYH5hdCBXDPMOVox4urzNC6rHgWgFZByexSQ=
 </ds:X509Certificate>
-<ds:X509SubjectName>C=CO,ST=ANTIOQUIA,L=MEDELLIN,O=JOHN DOE,OU=Emitido por Andes SCD Ac 26 69C 03 Torre B Of 701,T=Emisor Factura Electronica - Persona Natural,SERIALNUMBER=31415926541,CN=JOHN DOE,EMAILADDRESS=ventas@dominio.com,STREET=CL 65 SUR 72-391</ds:X509SubjectName>
+<ds:X509SubjectName>C=CO,ST=ANTIOQUIA,L=MEDELLIN,O=NELSON DE JESUS CARDENAS GONZALEZ,OU=Emitido por Andes SCD Ac 26 69C 03 Torre B Of 701,T=Emisor Factura Electronica - Persona Natural,SERIALNUMBER=717918021,CN=NELSON DE JESUS CARDENAS GONZALEZ,EMAILADDRESS=durablock08@gmail.com,STREET=CL 65 SUR 72-391</ds:X509SubjectName>
 <ds:X509IssuerSerial>
 <ds:X509IssuerName>C=CO,L=Bogota D.C.,O=Andes SCD,OU=Division de certificacion entidad final,CN=CA ANDES SCD S.A. Clase II v2,1.2.840.113549.1.9.1=#1614696e666f40616e6465737363642e636f6d2e636f</ds:X509IssuerName>
 <ds:X509SerialNumber>8133765940878140376</ds:X509SerialNumber>
@@ -273,7 +273,7 @@ K7EPjIJNMxBrFEn+978I8A9JrtKS9TQrLHCiHCerXhadwi+Py5edurwyOOmnOGn3GwVANI4PRruo
           <cbc:CountrySubentity>Antioquia</cbc:CountrySubentity>
           <cbc:CountrySubentityCode>05</cbc:CountrySubentityCode>
           <cac:AddressLine>
-            <cbc:Line>CALLE 1 No 2 3</cbc:Line>
+            <cbc:Line>CALLE 65 SUR No 72 391</cbc:Line>
           </cac:AddressLine>
           <cac:Country>
             <cbc:IdentificationCode>CO</cbc:IdentificationCode>
@@ -282,8 +282,8 @@ K7EPjIJNMxBrFEn+978I8A9JrtKS9TQrLHCiHCerXhadwi+Py5edurwyOOmnOGn3GwVANI4PRruo
         </cac:Address>
       </cac:PhysicalLocation>
       <cac:PartyTaxScheme>
-        <cbc:RegistrationName>JOHN DOE</cbc:RegistrationName>
-        <cbc:CompanyID schemeAgencyID="195" schemeAgencyName="CO, DIAN (Dirección de Impuestos y Aduanas Nacionales)" schemeID="1" schemeName="31">3141592654</cbc:CompanyID>
+        <cbc:RegistrationName>NELSON DE JESUS CARDENAS GONZALEZ</cbc:RegistrationName>
+        <cbc:CompanyID schemeAgencyID="195" schemeAgencyName="CO, DIAN (Dirección de Impuestos y Aduanas Nacionales)" schemeID="1" schemeName="31">71791802</cbc:CompanyID>
         <cbc:TaxLevelCode listName="No aplica">R-99-PN</cbc:TaxLevelCode>
         <cac:RegistrationAddress>
           <cbc:ID>05001</cbc:ID>
@@ -292,7 +292,7 @@ K7EPjIJNMxBrFEn+978I8A9JrtKS9TQrLHCiHCerXhadwi+Py5edurwyOOmnOGn3GwVANI4PRruo
           <cbc:CountrySubentity>Antioquia</cbc:CountrySubentity>
           <cbc:CountrySubentityCode>05</cbc:CountrySubentityCode>
           <cac:AddressLine>
-            <cbc:Line>CALLE 1 No 2 3</cbc:Line>
+            <cbc:Line>CALLE 65 SUR No 72 391</cbc:Line>
           </cac:AddressLine>
           <cac:Country>
             <cbc:IdentificationCode>CO</cbc:IdentificationCode>
@@ -305,16 +305,16 @@ K7EPjIJNMxBrFEn+978I8A9JrtKS9TQrLHCiHCerXhadwi+Py5edurwyOOmnOGn3GwVANI4PRruo
         </cac:TaxScheme>
       </cac:PartyTaxScheme>
       <cac:PartyLegalEntity>
-        <cbc:RegistrationName>JOHN DOE</cbc:RegistrationName>
-        <cbc:CompanyID schemeAgencyID="195" schemeAgencyName="CO, DIAN (Dirección de Impuestos y Aduanas Nacionales)" schemeID="1" schemeName="31">3141592654</cbc:CompanyID>
+        <cbc:RegistrationName>NELSON DE JESUS CARDENAS GONZALEZ</cbc:RegistrationName>
+        <cbc:CompanyID schemeAgencyID="195" schemeAgencyName="CO, DIAN (Dirección de Impuestos y Aduanas Nacionales)" schemeID="1" schemeName="31">71791802</cbc:CompanyID>
         <cac:CorporateRegistrationScheme>
           <cbc:ID>NC</cbc:ID>
         </cac:CorporateRegistrationScheme>
       </cac:PartyLegalEntity>
       <cac:Contact>
-        <cbc:Name>JOHN DOE</cbc:Name>
+        <cbc:Name>NELSON DE JESUS CARDENAS GONZALEZ</cbc:Name>
         <cbc:Telephone>3112744496</cbc:Telephone>
-        <cbc:ElectronicMail>ventas@dominio.com</cbc:ElectronicMail>
+        <cbc:ElectronicMail>durablock08@gmail.com</cbc:ElectronicMail>
       </cac:Contact>
     </cac:Party>
   </cac:AccountingSupplierParty>
@@ -323,7 +323,7 @@ K7EPjIJNMxBrFEn+978I8A9JrtKS9TQrLHCiHCerXhadwi+Py5edurwyOOmnOGn3GwVANI4PRruo
     <cac:Party>
       <cbc:IndustryClassificationCode>0144</cbc:IndustryClassificationCode>
       <cac:PartyIdentification>
-        <cbc:ID schemeName="13">161803398875</cbc:ID>
+        <cbc:ID schemeName="13">71274677</cbc:ID>
       </cac:PartyIdentification>
       <cac:PhysicalLocation>
         <cac:Address>
@@ -333,7 +333,7 @@ K7EPjIJNMxBrFEn+978I8A9JrtKS9TQrLHCiHCerXhadwi+Py5edurwyOOmnOGn3GwVANI4PRruo
           <cbc:CountrySubentity>Antioquia</cbc:CountrySubentity>
           <cbc:CountrySubentityCode>05</cbc:CountrySubentityCode>
           <cac:AddressLine>
-            <cbc:Line>CALLE 4 No 5 6</cbc:Line>
+            <cbc:Line>CALLE 44 SUR Nº 81A - 19 SAN ANTONIO DE PRADO</cbc:Line>
           </cac:AddressLine>
           <cac:Country>
             <cbc:IdentificationCode>CO</cbc:IdentificationCode>
@@ -342,8 +342,8 @@ K7EPjIJNMxBrFEn+978I8A9JrtKS9TQrLHCiHCerXhadwi+Py5edurwyOOmnOGn3GwVANI4PRruo
         </cac:Address>
       </cac:PhysicalLocation>
       <cac:PartyTaxScheme>
-        <cbc:RegistrationName>JANE DOE</cbc:RegistrationName>
-        <cbc:CompanyID schemeAgencyID="195" schemeAgencyName="CO, DIAN (Dirección de Impuestos y Aduanas Nacionales)" schemeID="" schemeName="13">161803398875</cbc:CompanyID>
+        <cbc:RegistrationName>ALEJANDRO BETANCUR PENAGOS</cbc:RegistrationName>
+        <cbc:CompanyID schemeAgencyID="195" schemeAgencyName="CO, DIAN (Dirección de Impuestos y Aduanas Nacionales)" schemeID="" schemeName="13">71274677</cbc:CompanyID>
         <cbc:TaxLevelCode listName="No aplica">R-99-PN</cbc:TaxLevelCode>
         <cac:RegistrationAddress>
           <cbc:ID>05001</cbc:ID>
@@ -352,7 +352,7 @@ K7EPjIJNMxBrFEn+978I8A9JrtKS9TQrLHCiHCerXhadwi+Py5edurwyOOmnOGn3GwVANI4PRruo
           <cbc:CountrySubentity>Antioquia</cbc:CountrySubentity>
           <cbc:CountrySubentityCode>05</cbc:CountrySubentityCode>
           <cac:AddressLine>
-            <cbc:Line>CALLE 4 No 5 6</cbc:Line>
+            <cbc:Line>CALLE 44 SUR Nº 81A - 19 SAN ANTONIO DE PRADO</cbc:Line>
           </cac:AddressLine>
           <cac:Country>
             <cbc:IdentificationCode>CO</cbc:IdentificationCode>
@@ -365,8 +365,8 @@ K7EPjIJNMxBrFEn+978I8A9JrtKS9TQrLHCiHCerXhadwi+Py5edurwyOOmnOGn3GwVANI4PRruo
         </cac:TaxScheme>
       </cac:PartyTaxScheme>
       <cac:PartyLegalEntity>
-        <cbc:RegistrationName>JANE DOE</cbc:RegistrationName>
-        <cbc:CompanyID schemeAgencyID="195" schemeAgencyName="CO, DIAN (Dirección de Impuestos y Aduanas Nacionales)" schemeID="" schemeName="13">161803398875</cbc:CompanyID>
+        <cbc:RegistrationName>ALEJANDRO BETANCUR PENAGOS</cbc:RegistrationName>
+        <cbc:CompanyID schemeAgencyID="195" schemeAgencyName="CO, DIAN (Dirección de Impuestos y Aduanas Nacionales)" schemeID="" schemeName="13">71274677</cbc:CompanyID>
         <cac:CorporateRegistrationScheme>
           <cbc:ID/>
           <cbc:CorporateRegistrationTypeCode>NA</cbc:CorporateRegistrationTypeCode>
@@ -375,7 +375,7 @@ K7EPjIJNMxBrFEn+978I8A9JrtKS9TQrLHCiHCerXhadwi+Py5edurwyOOmnOGn3GwVANI4PRruo
       <cac:Contact>
         <cbc:Telephone>2862883</cbc:Telephone>
         <cbc:Telefax>3007778074</cbc:Telefax>
-        <cbc:ElectronicMail>correo@dominio.com</cbc:ElectronicMail>
+        <cbc:ElectronicMail>granjaelaltico@gmail.com</cbc:ElectronicMail>
       </cac:Contact>
     </cac:Party>
   </cac:AccountingCustomerParty>
@@ -505,8 +505,8 @@ K7EPjIJNMxBrFEn+978I8A9JrtKS9TQrLHCiHCerXhadwi+Py5edurwyOOmnOGn3GwVANI4PRruo
   </cac:SenderParty>
   <cac:ReceiverParty>
     <cac:PartyTaxScheme>
-      <cbc:RegistrationName>JOHN DOE</cbc:RegistrationName>
-      <cbc:CompanyID schemeID="1" schemeName="31">3141592654</cbc:CompanyID>
+      <cbc:RegistrationName>NELSON DE JESUS CARDENAS GONZALEZ</cbc:RegistrationName>
+      <cbc:CompanyID schemeID="1" schemeName="31">71791802</cbc:CompanyID>
       <cac:TaxScheme>
         <cbc:ID>01</cbc:ID>
         <cbc:Name>IVA</cbc:Name>
