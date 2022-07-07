@@ -39,12 +39,12 @@ export default function Output({ data }) {
           itemID = xmlItem.getElementsByTagName('cac:StandardItemIdentification')[i].firstElementChild.textContent;
           itemDescription = xmlItem.getElementsByTagName('cbc:Description')[i].childNodes[0].nodeValue;
           itemQuantity = xmlItem.getElementsByTagName('cbc:BaseQuantity')[i].childNodes[0].nodeValue;
-          if ( i + 1 == xmlItem.getElementsByTagName('cbc:Description').length) {
-            itemRetention = '¿?';
-            itemSubtotal = '¿?';
-          } else {
+          if ( xmlItem.getElementsByTagName('cbc:TaxableAmount')[i] != undefined ) {
             itemRetention = xmlItem.getElementsByTagName('cbc:Percent')[i].childNodes[0].nodeValue;
             itemSubtotal = itemSubtotal = xmlItem.getElementsByTagName('cbc:TaxableAmount')[i].childNodes[0].nodeValue;
+          } else {
+            itemRetention = '¿?';
+            itemSubtotal = '¿?';
           }
           itemPrice = xmlItem.getElementsByTagName('cbc:PriceAmount')[i].childNodes[0].nodeValue;
           item += `\t \t \t \t \t \t \t \t \t ${itemID} \t ${itemDescription} \t ${itemQuantity} \t ${itemRetention} \t ${itemPrice} \t ${itemSubtotal}\n`;
