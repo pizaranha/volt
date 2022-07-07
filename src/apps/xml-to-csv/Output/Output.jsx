@@ -27,7 +27,6 @@ export default function Output({ data }) {
         const billIva = xmlItem.getElementsByTagName('cbc:TaxAmount')[0].childNodes[0].nodeValue;
         const billRetention = xmlItem.getElementsByTagName('cbc:ChargeTotalAmount')[0].childNodes[0].nodeValue;
         const billTotal = xmlItem.getElementsByTagName('cbc:TaxInclusiveAmount')[0].childNodes[0].nodeValue;
-
         let item = '';
         let i = 0;
         let itemID = ''
@@ -45,12 +44,11 @@ export default function Output({ data }) {
             itemSubtotal = '¿?';
           } else {
             itemRetention = xmlItem.getElementsByTagName('cbc:Percent')[i].childNodes[0].nodeValue;
-            itemSubtotal = itemSubtotal = xmlItem.getElementsByTagName('cbc:TaxableAmount')[i].childNodes[0].nodeValue;;
+            itemSubtotal = itemSubtotal = xmlItem.getElementsByTagName('cbc:TaxableAmount')[i].childNodes[0].nodeValue;
           }
           itemPrice = xmlItem.getElementsByTagName('cbc:PriceAmount')[i].childNodes[0].nodeValue;
           item += `\t \t \t \t \t \t \t \t \t ${itemID} \t ${itemDescription} \t ${itemQuantity} \t ${itemRetention} \t ${itemPrice} \t ${itemSubtotal}\n`;
         }
-
         csv = `Bill Date \t Issuer NIT \t Issuer Name \t Bill # \t Subtotal \t Discount \t IVA \t Retention \t Total \t Item \t Description \t Quantity \t Tax \t Unit Cost \t Total by item
 ${billDate} \t ${billNit} \t ${billIssuer} \t ${billId} \t ${billSubtotal} \t ${billDiscount} \t ${billIva} \t ${billRetention} \t ${billTotal}
 ${item}`;
