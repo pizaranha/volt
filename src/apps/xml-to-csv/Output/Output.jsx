@@ -34,12 +34,14 @@ export default function Output({ data }) {
         } else {
           billDate = '🚩';
         }
-        if (xmlItem.getElementsByTagName('cac:SellerContact')[0] !== undefined) {
-          xmlElement = xmlItem.getElementsByTagName('cac:SellerContact');
-          billNit = xmlElement[0].getElementsByTagName('cbc:ID')[0].childNodes[0].nodeValue;
-          billIssuer = xmlElement[0].getElementsByTagName('cbc:Name')[0].childNodes[0].nodeValue;
+        if (xmlDoc.getElementsByTagName('cbc:CompanyID')[0] !== undefined) {
+          billNit = xmlDoc.getElementsByTagName('cbc:CompanyID')[0].childNodes[0].nodeValue;
         } else {
           billNit = '🚩';
+        }
+        if (xmlDoc.getElementsByTagName('cbc:RegistrationName')[0] !== undefined) {
+          billIssuer = xmlDoc.getElementsByTagName('cbc:RegistrationName')[0].childNodes[0].nodeValue;
+        } else {
           billIssuer = '🚩';
         }
         if (xmlDoc.getElementsByTagName('cbc:ParentDocumentID')[0] !== undefined) {
@@ -49,10 +51,26 @@ export default function Output({ data }) {
         }
         if (xmlItem.getElementsByTagName('cac:LegalMonetaryTotal').length) {
           xmlElement = xmlItem.getElementsByTagName('cac:LegalMonetaryTotal');
-          billSubtotal = xmlElement[0].getElementsByTagName('cbc:LineExtensionAmount')[0].childNodes[0].nodeValue;
-          billDiscount = xmlElement[0].getElementsByTagName('cbc:AllowanceTotalAmount')[0].childNodes[0].nodeValue;
-          billTotal = xmlElement[0].getElementsByTagName('cbc:PayableAmount')[0].childNodes[0].nodeValue;
-          billRetention = xmlElement[0].getElementsByTagName('cbc:ChargeTotalAmount')[0].childNodes[0].nodeValue;
+          if (xmlElement[0].getElementsByTagName('cbc:AllowanceTotalAmount')[0] !== undefined) {
+            billSubtotal = xmlElement[0].getElementsByTagName('cbc:LineExtensionAmount')[0].childNodes[0].nodeValue;
+          } else {
+            billSubtotal = '🚩';
+          }
+          if (xmlElement[0].getElementsByTagName('cbc:AllowanceTotalAmount')[0] !== undefined) {
+            billDiscount = xmlElement[0].getElementsByTagName('cbc:AllowanceTotalAmount')[0].childNodes[0].nodeValue;
+          } else {
+            billDiscount = '🚩';
+          }
+          if (xmlElement[0].getElementsByTagName('cbc:PayableAmount')[0] !== undefined) {
+            billTotal = xmlElement[0].getElementsByTagName('cbc:PayableAmount')[0].childNodes[0].nodeValue;
+          } else {
+            billTotal = '🚩';
+          }
+          if (xmlElement[0].getElementsByTagName('cbc:ChargeTotalAmount')[0] !== undefined) {
+            billRetention = xmlElement[0].getElementsByTagName('cbc:ChargeTotalAmount')[0].childNodes[0].nodeValue;
+          } else {
+            billRetention = '🚩';
+          }
         } else {
           billSubtotal = '🚩';
           billDiscount = '🚩';
@@ -61,7 +79,11 @@ export default function Output({ data }) {
         }
         if (xmlItem.getElementsByTagName('cac:TaxTotal').length) {
           xmlElement = xmlItem.getElementsByTagName('cac:TaxTotal');
-          billIva = xmlElement[0].getElementsByTagName('cbc:TaxAmount')[0].childNodes[0].nodeValue;
+          if (xmlElement[0].getElementsByTagName('cbc:TaxAmount')[0] !== undefined) {
+            billIva = xmlElement[0].getElementsByTagName('cbc:TaxAmount')[0].childNodes[0].nodeValue;
+          } else {
+            billIva = '🚩';
+          }
         } else {
           billIva = '0';
         }
@@ -75,11 +97,31 @@ export default function Output({ data }) {
         let itemSubtotal = '';
         for (i; i < xmlItem.getElementsByTagName('cac:InvoiceLine').length; i += 1) {
           xmlElement = xmlItem.getElementsByTagName('cac:InvoiceLine');
-          itemID = xmlElement[i].getElementsByTagName('cac:StandardItemIdentification')[0].firstElementChild.textContent;
-          itemDescription = xmlElement[i].getElementsByTagName('cbc:Description')[0].childNodes[0].nodeValue;
-          itemQuantity = xmlElement[i].getElementsByTagName('cbc:BaseQuantity')[0].childNodes[0].nodeValue;
-          itemPrice = xmlElement[i].getElementsByTagName('cbc:PriceAmount')[0].childNodes[0].nodeValue;
-          itemSubtotal = xmlElement[i].getElementsByTagName('cbc:LineExtensionAmount')[0].childNodes[0].nodeValue;
+          if (xmlElement[i].getElementsByTagName('cac:StandardItemIdentification')[0] !== undefined) {
+            itemID = xmlElement[i].getElementsByTagName('cac:StandardItemIdentification')[0].firstElementChild.textContent;
+          } else {
+            itemID = '🚩';
+          }
+          if (xmlElement[i].getElementsByTagName('cbc:Description')[0] !== undefined) {
+            itemDescription = xmlElement[i].getElementsByTagName('cbc:Description')[0].childNodes[0].nodeValue;
+          } else {
+            itemDescription = '🚩';
+          }
+          if (xmlElement[i].getElementsByTagName('cbc:BaseQuantity')[0] !== undefined) {
+            itemQuantity = xmlElement[i].getElementsByTagName('cbc:BaseQuantity')[0].childNodes[0].nodeValue;
+          } else {
+            itemQuantity = '🚩';
+          }
+          if (xmlElement[i].getElementsByTagName('cbc:PriceAmount')[0] !== undefined) {
+            itemPrice = xmlElement[i].getElementsByTagName('cbc:PriceAmount')[0].childNodes[0].nodeValue;
+          } else {
+            itemPrice = '🚩';
+          }
+          if (xmlElement[i].getElementsByTagName('cbc:LineExtensionAmount')[0] !== undefined) {
+            itemSubtotal = xmlElement[i].getElementsByTagName('cbc:LineExtensionAmount')[0].childNodes[0].nodeValue;
+          } else {
+            itemSubtotal = '🚩';
+          }
           if (xmlElement[i].getElementsByTagName('cbc:Percent')[0] !== undefined) {
             itemTax = xmlElement[i].getElementsByTagName('cbc:Percent')[0].childNodes[0].nodeValue;
           } else {
