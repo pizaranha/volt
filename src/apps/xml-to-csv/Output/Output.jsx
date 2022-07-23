@@ -19,7 +19,8 @@ export default function Output({ data }) {
     if (xmlDoc.getElementsByTagName('cbc:RegistrationName').length > 0) {
       const xmlItem = parser.parseFromString(xmlDoc.getElementsByTagName('cbc:Description')[0].childNodes[0].nodeValue, 'text/xml');
       if (xmlItem.getElementsByTagName('cbc:Description').length > 0) {
-        let billDate = '';
+        let xmlElement;
+        let billDate;
         let billNit;
         let billIssuer;
         let billId;
@@ -28,19 +29,17 @@ export default function Output({ data }) {
         let billIva;
         let billRetention;
         let billTotal;
-        if (xmlDoc.getElementsByTagName('cbc:IssueDate')[0] !== undefined) {
-          billDate = xmlDoc.getElementsByTagName('cbc:IssueDate')[0].childNodes[0].nodeValue;
+        if (xmlItem.getElementsByTagName('cbc:IssueDate')[0] !== undefined) {
+          billDate = xmlItem.getElementsByTagName('cbc:IssueDate')[0].childNodes[0].nodeValue;
         } else {
           billDate = '🚩';
         }
-        if (xmlDoc.getElementsByTagName('cbc:CompanyID')[0] !== undefined) {
-          billNit = xmlDoc.getElementsByTagName('cbc:CompanyID')[0].childNodes[0].nodeValue;
+        if (xmlItem.getElementsByTagName('cac:SellerContact')[0] !== undefined) {
+          xmlElement = xmlItem.getElementsByTagName('cac:SellerContact');
+          billNit = xmlElement[0].getElementsByTagName('cbc:ID')[0].childNodes[0].nodeValue;
+          billIssuer = xmlElement[0].getElementsByTagName('cbc:Name')[0].childNodes[0].nodeValue;
         } else {
           billNit = '🚩';
-        }
-        if (xmlDoc.getElementsByTagName('cbc:RegistrationName')[0] !== undefined) {
-          billIssuer = xmlDoc.getElementsByTagName('cbc:RegistrationName')[0].childNodes[0].nodeValue;
-        } else {
           billIssuer = '🚩';
         }
         if (xmlDoc.getElementsByTagName('cbc:ParentDocumentID')[0] !== undefined) {
@@ -48,53 +47,47 @@ export default function Output({ data }) {
         } else {
           billId = '🚩';
         }
-        if (xmlItem.getElementsByTagName('cbc:TaxableAmount')[0] !== undefined) {
-          billSubtotal = xmlItem.getElementsByTagName('cbc:TaxableAmount')[0].childNodes[0].nodeValue;
+        if (xmlItem.getElementsByTagName('cac:LegalMonetaryTotal').length) {
+          xmlElement = xmlItem.getElementsByTagName('cac:LegalMonetaryTotal');
+          billSubtotal = xmlElement[0].getElementsByTagName('cbc:LineExtensionAmount')[0].childNodes[0].nodeValue;
+          billDiscount = xmlElement[0].getElementsByTagName('cbc:AllowanceTotalAmount')[0].childNodes[0].nodeValue;
+          billTotal = xmlElement[0].getElementsByTagName('cbc:PayableAmount')[0].childNodes[0].nodeValue;
+          billRetention = xmlElement[0].getElementsByTagName('cbc:ChargeTotalAmount')[0].childNodes[0].nodeValue;
         } else {
           billSubtotal = '🚩';
-        }
-        if (xmlItem.getElementsByTagName('cbc:AllowanceTotalAmount')[0] !== undefined) {
-          billDiscount = xmlItem.getElementsByTagName('cbc:AllowanceTotalAmount')[0].childNodes[0].nodeValue;
-        } else {
           billDiscount = '🚩';
-        }
-        if (xmlItem.getElementsByTagName('cbc:TaxAmount')[0] !== undefined) {
-          billIva = xmlItem.getElementsByTagName('cbc:TaxAmount')[0].childNodes[0].nodeValue;
-        } else {
-          billIva = '🚩';
-        }
-        if (xmlItem.getElementsByTagName('cbc:ChargeTotalAmount')[0] !== undefined) {
-          billRetention = xmlItem.getElementsByTagName('cbc:ChargeTotalAmount')[0].childNodes[0].nodeValue;
-        } else {
           billRetention = '🚩';
-        }
-        if (xmlItem.getElementsByTagName('cbc:TaxInclusiveAmount')[0] !== undefined) {
-          billTotal = xmlItem.getElementsByTagName('cbc:TaxInclusiveAmount')[0].childNodes[0].nodeValue;
-        } else {
           billTotal = '🚩';
+        }
+        if (xmlItem.getElementsByTagName('cac:TaxTotal').length) {
+          xmlElement = xmlItem.getElementsByTagName('cac:TaxTotal');
+          billIva = xmlElement[0].getElementsByTagName('cbc:TaxAmount')[0].childNodes[0].nodeValue;
+        } else {
+          billIva = '0';
         }
         let item = '';
         let i = 0;
         let itemID = '';
         let itemDescription = '';
         let itemQuantity = '';
-        let itemRetention = '';
+        let itemTax = '';
         let itemPrice = '';
         let itemSubtotal = '';
-        for (i; i < xmlItem.getElementsByTagName('cbc:Description').length; i += 1) {
-          itemID = xmlItem.getElementsByTagName('cac:StandardItemIdentification')[i].firstElementChild.textContent;
-          itemDescription = xmlItem.getElementsByTagName('cbc:Description')[i].childNodes[0].nodeValue;
-          itemQuantity = xmlItem.getElementsByTagName('cbc:BaseQuantity')[i].childNodes[0].nodeValue;
-          if (xmlItem.getElementsByTagName('cbc:TaxableAmount')[i] !== undefined) {
-            itemRetention = xmlItem.getElementsByTagName('cbc:Percent')[i].childNodes[0].nodeValue;
-            itemSubtotal = xmlItem.getElementsByTagName('cbc:TaxableAmount')[i].childNodes[0].nodeValue;
+        for (i; i < xmlItem.getElementsByTagName('cac:InvoiceLine').length; i += 1) {
+          xmlElement = xmlItem.getElementsByTagName('cac:InvoiceLine');
+          itemID = xmlElement[i].getElementsByTagName('cac:StandardItemIdentification')[0].firstElementChild.textContent;
+          itemDescription = xmlElement[i].getElementsByTagName('cbc:Description')[0].childNodes[0].nodeValue;
+          itemQuantity = xmlElement[i].getElementsByTagName('cbc:BaseQuantity')[0].childNodes[0].nodeValue;
+          itemPrice = xmlElement[i].getElementsByTagName('cbc:PriceAmount')[0].childNodes[0].nodeValue;
+          itemSubtotal = xmlElement[i].getElementsByTagName('cbc:LineExtensionAmount')[0].childNodes[0].nodeValue;
+          if (xmlElement[i].getElementsByTagName('cbc:Percent')[0] !== undefined) {
+            itemTax = xmlElement[i].getElementsByTagName('cbc:Percent')[0].childNodes[0].nodeValue;
           } else {
-            itemRetention = '🚩';
-            itemSubtotal = '🚩';
+            itemTax = '0';
           }
-          itemPrice = xmlItem.getElementsByTagName('cbc:PriceAmount')[i].childNodes[0].nodeValue;
-          item += `\t \t \t \t \t \t \t \t \t ${itemID} \t ${itemDescription} \t ${itemQuantity} \t ${itemRetention} \t ${itemPrice} \t ${itemSubtotal}\n`;
+          item += `\t \t \t \t \t \t \t \t \t ${itemID} \t ${itemDescription} \t ${itemQuantity} \t ${itemTax} \t ${itemPrice} \t ${itemSubtotal}\n`;
         }
+        xmlElement = null;
         csv = `Bill Date \t Issuer NIT \t Issuer Name \t Bill # \t Subtotal \t Discount \t IVA \t Retention \t Total \t Item \t Description \t Quantity \t Tax \t Unit Cost \t Total by item
 ${billDate} \t ${billNit} \t ${billIssuer} \t ${billId} \t ${billSubtotal} \t ${billDiscount} \t ${billIva} \t ${billRetention} \t ${billTotal}
 ${item}`;
